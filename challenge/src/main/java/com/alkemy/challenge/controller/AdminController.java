@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alkemy.challenge.entity.Course;
 import com.alkemy.challenge.entity.ICoursesCount;
+import com.alkemy.challenge.entity.Student;
 import com.alkemy.challenge.entity.Teacher;
 import com.alkemy.challenge.service.CourseService;
 import com.alkemy.challenge.service.TeacherService;
@@ -147,9 +148,16 @@ public class AdminController {
     @GetMapping("/curso/delete/{id}")
     public String borrarCurso (@PathVariable int id) {
         try {
-            Optional<Course> curso = cs.buscarCursoById(id);
-            if (curso.isPresent()) {
-                cs.eliminarCurso(id);
+            Optional<Course> optCurso = cs.buscarCursoById(id); 
+            
+            if (optCurso.isPresent()) {
+                Course curso = optCurso.get();
+                
+                for (Student stu : curso.getStudents()) {
+                    stu.getCourses().remove(curso);
+                }
+
+                cs.eliminarCurso(curso);                
             }
             return "redirect:/admin/curso?delete=true";
         } catch (Exception e) {

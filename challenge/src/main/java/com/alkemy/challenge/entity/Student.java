@@ -3,7 +3,6 @@ package com.alkemy.challenge.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -43,7 +42,7 @@ public class Student {
     @JoinColumn(name= "id_user")
     private User user;
     
-    @ManyToMany(targetEntity = Course.class, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Course.class)
     @JoinTable(name="enrollment", 
             joinColumns= @JoinColumn (name="id_student"),
             inverseJoinColumns= @JoinColumn(name="id_course"))

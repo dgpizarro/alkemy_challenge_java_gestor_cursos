@@ -3,7 +3,7 @@ package com.alkemy.challenge.entity;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -45,7 +45,7 @@ public class Course {
     @JoinColumn(name= "id_teacher")
     private Teacher teacher;
     
-    @ManyToMany(mappedBy = "courses", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "courses")
     private Set<Student> students = new HashSet<>();
 
     public int getId() {

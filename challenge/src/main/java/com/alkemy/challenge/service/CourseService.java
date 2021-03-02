@@ -13,7 +13,7 @@ public interface CourseService {
     public abstract Course agregarEditarCurso (Course c);
     public abstract Optional<Course> buscarCursoById(int id);
     public abstract Optional<Course> buscarCursoCoincidenciaModuloEstudiante(String day, String module, int id);
-    public abstract void eliminarCurso(int id);
+    public abstract void eliminarCurso(Course c);
     public abstract List<Course> buscarMismoHorario(String day, String module, Teacher teacher);
     public abstract List<Course> buscarCursosByTeacher(Teacher teacher);
     public abstract List<Course> buscarCursosByEstudiante(int id);

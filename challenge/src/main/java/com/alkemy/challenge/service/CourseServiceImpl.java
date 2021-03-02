@@ -33,9 +33,8 @@ public class CourseServiceImpl implements CourseService{
     }
 
     @Override
-    public void eliminarCurso(int id) {
-        cr.deleteById(id);
-        
+    public void eliminarCurso(Course c) {
+        cr.delete(c);
     }
 
     @Override
