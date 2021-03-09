@@ -59,14 +59,7 @@ public class StudentController {
         return "inscripcionEstudiante";
     }
 
-    @GetMapping("/detalle_curso/{id_course}")
-    public String detallarCurso(@PathVariable int id_course, Model m) {
-        Optional<Course> obj = cs.buscarCursoById(id_course);
-        Course curso = obj.get();
-        m.addAttribute("curso", curso);
-        return "detalleCurso";
-    }
-
+   
     @GetMapping("/validar_inscripcion/{id_student}/{id_course}")
     public String validarInscripcion(@PathVariable int id_student, @PathVariable int id_course, Model m) {
 

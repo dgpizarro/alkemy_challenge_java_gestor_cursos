@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-5 ms-md-3">
+                    <h1 class="display-5 ms-md-3 my-0 mb-lg-1">
                         <i class="fas fa-user-shield"></i> Portal Admin
                     </h1>
                 </div>
@@ -33,12 +33,12 @@
     <section id="actions" class=" my-4 py-2 container">
         <div class="row justify-content-evenly">
         
-            <div class="col col-md-4 shadow rounded-2 card p-4 mt-5 bg-light">
+            <div class="col-11 col-md-4 shadow rounded-2 card p-4 mt-4 mt-lg-5 bg-light">
                 <a href="${pageContext.request.contextPath}/admin/profesor" class="text-center mb-4 fs-2 link-info">Gestión de Profesores</a>
                 <h6>Total registrados: <c:out value="${totalProfesores}" /></h6>
             </div>
          
-		    <div class="col col-md-4 shadow rounded-2 card p-4 mt-5 bg-light">
+		    <div class="col-11 col-md-4 shadow rounded-2 card p-4 mt-4 mt-lg-5 bg-light">
                 <a href="${pageContext.request.contextPath}/admin/curso" class="text-center mb-4 fs-2 link-info">Gestión de Cursos</a>
                 <h6>Cursos registrados: <c:out value="${totalCursos}" /></h6>
             </div>

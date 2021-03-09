@@ -15,6 +15,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -41,10 +43,12 @@ public class Course {
     @Column(length=1000, nullable = false)
     private String description;
     
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "id_teacher")
     private Teacher teacher;
     
+    @JsonIgnore
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students = new HashSet<>();
 

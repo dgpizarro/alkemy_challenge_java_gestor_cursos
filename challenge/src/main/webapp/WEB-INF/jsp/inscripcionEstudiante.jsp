@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-5 ms-md-3">
+                    <h1 class="display-5 ms-md-3 my-0 mb-lg-1">
                        <i class="fas fa-file-signature"></i> Inscripción de cursos
                     </h1>
                 </div>
@@ -60,7 +60,7 @@
                                 <td><c:out value="${c.getNombreT()}" /> <c:out value="${c.getApellidoT()}" /></td>
                                 <td><c:out value="${c.getMaximo()}" /> </td>
                                 <td><c:out value="${c.getInscritos()}" /> </td>
-                                <td><a class="link2 btn btn-info btn-sm text-white" href="${pageContext.request.contextPath}/estudiante/detalle_curso/${c.getIdCurso()}" >Detalle</a> </td>
+                                <td><a class="link2 btn btn-info btn-sm text-white" href="${pageContext.request.contextPath}/estudiante/api/curso/${c.getIdCurso()}" >Detalle</a> </td>
                                 <td>
 	                                 <c:if test="${c.getInscritos() >= c.getMaximo()}">
 	                                    <button type="button" class="btn btn-success btn-sm " disabled> No disponible </button>
@@ -86,6 +86,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
+        <h5 class="modal-title"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -110,13 +111,17 @@ const modalDetalle = new bootstrap.Modal(document.getElementById('modalDetalle')
 $('body').on("click", '.link2', function(e) {
     e.preventDefault();
     let url = e.target.href;
-    $('.modal-body').load(url, function () {
-    	modalDetalle.show();
+    $.getJSON(url, function (json) {
+    	$('.modal-title').html('<h5 class="text-primary my-0">'+json.name +'</h5>');
+    	$('.modal-body').html('<small class="fw-light">'+json.description +'</small>');
     });
+    modalDetalle.show();   
 });
 
 $('body').on("click", '.link3', function(e) {
     e.preventDefault();
+    $('.modal-title').empty();
+    $('.modal-body').empty();
     let url = e.target.href;
     $('.modal-body').load(url, function () {
         modalDetalle.show();

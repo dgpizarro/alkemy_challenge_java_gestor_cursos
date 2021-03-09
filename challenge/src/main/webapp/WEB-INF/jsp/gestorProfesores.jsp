@@ -22,7 +22,7 @@
 	    <div class="container-fluid">
 	        <div class="row">
 	            <div class="col">
-	                <h1 class="display-5 ms-md-3">
+	                <h1 class="display-5 ms-md-3 my-0 mb-lg-1">
 	                    <i class="fas fa-cog"></i> Gestión profesores
 	                </h1>
 	            </div>
@@ -51,7 +51,7 @@
 	                  ¡Profesor eliminado exitosamente!
 	            </c:if>
 	            <c:if test="${param.delete == false}">
-	                  ¡Ocurrió un problema al eliminar los datos!
+	                  ¡Ocurrió un problema al eliminar los datos, el profesor se encuentra asociado a un curso, elimine el curso primero!
 	            </c:if>
 
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,12 +61,14 @@
 
 
     <!--Botones-->
-	<section id="actions" class=" my-4 py-2 container">
+	<section id="actions" class="my-2 my-lg-4 py-2 container">
 	    <div class="row">
-	        <div class="col-lg-3">
-	            <a href="${pageContext.request.contextPath}/admin/profesor/add_form" id="link1" class="btn btn-primary btn-block shadow">
-	                <i class="fas fa-plus"></i> Agregar Profesor
-	            </a>
+	        <div class="col col-lg-3">
+	           <div class="d-grid gap-2">
+		            <a href="${pageContext.request.contextPath}/admin/profesor/add_form" id="link1" class="btn btn-primary shadow">
+		                <i class="fas fa-plus"></i> Agregar Profesor
+		            </a>
+	           </div>
 	        </div>
 	    </div>
 	</section>

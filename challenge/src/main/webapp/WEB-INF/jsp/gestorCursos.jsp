@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-5 ms-md-3">
+                    <h1 class="display-5 ms-md-3 my-0 mb-lg-1">
                         <i class="fas fa-cog"></i> Gestión cursos
                     </h1>
                 </div>
@@ -64,12 +64,14 @@
 
 
     <!--Botones-->
-    <section id="actions" class=" my-4 py-2 container">
+    <section id="actions" class=" my-2 my-lg-4 py-2 container">
         <div class="row">
-            <div class="col-md-3">
-                <a href="${pageContext.request.contextPath}/admin/curso/add_form" id="link1" class="btn btn-primary btn-block shadow">
-                    <i class="fas fa-plus"></i> Agregar Curso
-                </a>
+            <div class="col col-md-3">
+                 <div class="d-grid gap-2">
+	                <a href="${pageContext.request.contextPath}/admin/curso/add_form" id="link1" class="btn btn-primary btn-block shadow">
+	                    <i class="fas fa-plus"></i> Agregar Curso
+	                </a>
+                </div>
             </div>
         </div>
     </section>

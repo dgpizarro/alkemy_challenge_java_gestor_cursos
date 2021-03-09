@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h1 class="display-5 ms-md-3">
+                    <h1 class="display-5 ms-md-3 my-0 mb-lg-1">
                         <i class="fas fa-book-open"></i> Mis cursos inscritos
                     </h1>
                 </div>
@@ -52,11 +52,11 @@
     <div class="container">
         <div class="row">
             <div class="col ">
-                <div class="card my-4 shadow">
-                    <div class="card-header">
+                <div class="card my-2 shadow">
+                    <div class="card-header" >
                         <h4>Listado de Cursos</h4>
                     </div>
-                    <div class="card-body p-3"> 
+                    <div class="card-body p-3 overflow-auto" style="height:450px"> 
                     
                      <c:if test="${no_data == true}">
                       <h5 class="mb-1 text-primary">No ha isncrito cursos aún</h5>
@@ -68,7 +68,7 @@
 		                    <div class="d-flex w-100 justify-content-between">
 		                      <h5 class="mb-1 text-primary"><c:out value="${c.getName()}" /></h5>
 		                    </div>
-		                    <p class="mb-1"><c:out value="${c.getDay()}" /> <c:out value="${c.getModule()}" /></p>
+		                    <p class="mb-1 fw-bold"><c:out value="${c.getDay()}" /> <c:out value="${c.getModule()}" /></p>
 		                    <small><c:out value="${c.getDescription()}" /></small>
 		                  </div>
 		              </c:forEach>
